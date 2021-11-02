@@ -22,7 +22,6 @@
     "gatsby-plugin-image": "^2.0.0",
     "gatsby-plugin-manifest": "^3.14.0",
     "gatsby-plugin-offline": "^4.14.0",
-    "gatsby-plugin-posthog-analytics": "^0.0.1",
     "gatsby-plugin-react-helmet": "^5.0.0",
     "gatsby-plugin-sass": "^5.0.0",
     "gatsby-plugin-sharp": "^4.0.0",

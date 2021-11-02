@@ -129,15 +129,15 @@ module.exports = {
         // skipIndexing: true,
       },
     },
-    {
-      resolve: `gatsby-plugin-posthog-analytics`,
-      options: {
-        apiKey: process.env.POSTHOG_API_KEY,
-        appHost: process.env.POSTHOG_HOST,
-        head: true,
-        isEnabledDevMode: false
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-posthog-analytics`,
+    //   options: {
+    //     apiKey: process.env.POSTHOG_API_KEY,
+    //     appHost: process.env.POSTHOG_HOST,
+    //     head: true,
+    //     isEnabledDevMode: false
+    //   },
+    // },
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
