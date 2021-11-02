@@ -111,7 +111,14 @@ const BlogPostTemplate = ({ data, location }) => {
         </footer>
       </div>
       <div className={`tocbot-wrapper ${stickyToc ? '' : 'tocbot-wrapper--sticky'}`}>
-        <div className={showToc ? 'button' : 'button button--hide'} onClick={() => setShowToc(!showToc)}>{`<TOC/>`}</div>
+        <div
+          className={showToc ? 'button' : 'button button--hide'}
+          onClick={() => setShowToc(!showToc)}
+          onKeyPress={() => {}}
+          role="button"
+          tabIndex={0}
+        >{`<TOC/>`}
+        </div>
         <div id="tocbot" className={showToc ? 'accerator tocbot' : 'hide'} />
       </div>
       <div className={`backtop-wrapper ${showBackTop ? '' : 'hide'}`} id="back_top">
