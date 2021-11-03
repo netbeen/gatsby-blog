@@ -25,7 +25,7 @@
     "gatsby-plugin-sass": "^5.1.0",
     "gatsby-plugin-sharp": "^4.1.0",
     "gatsby-plugin-styled-components": "^5.1.0",
-    "gatsby-remark-autolink-headers": "^3.2.0",
+    "gatsby-remark-autolink-headers": "^5.1.0",
     "gatsby-remark-code-buttons": "^2.0.7",
     "gatsby-remark-code-titles": "^1.1.0",
     "gatsby-remark-copy-linked-files": "^3.1.0",
