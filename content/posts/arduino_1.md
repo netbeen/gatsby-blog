@@ -2,10 +2,10 @@
 title: Arduino基础（一）简单介绍与数字输入和判断
 date: 2018-10-23
 category: embeded
-tags: ["arduino"]
+tags: ['arduino']
 ---
 
-先开箱一个翁凯老师推荐的Ardublock，感觉某些时候用Ardublock效率还是很高的。  
+先开箱一个翁凯老师推荐的 Ardublock，感觉某些时候用 Ardublock 效率还是很高的。  
 ![](https://pic.rhinoc.top/15403068918334.jpg)
 
 > 关于硬件颜色的小贴士：  
@@ -15,19 +15,19 @@ tags: ["arduino"]
 
 ## 硬件介绍
 
-### Arduino开发板
+### Arduino 开发板
 
 ![](https://pic.rhinoc.top/15403073077500.jpg)
 
 > 关于数字引脚的小贴士：  
-> 共有14个（0-13），其中13是关联板载LED灯，一般避开0和1，因为0和1一般做串口。
+> 共有 14 个（0-13），其中 13 是关联板载 LED 灯，一般避开 0 和 1，因为 0 和 1 一般做串口。
 
 ### 面包板
 
 ![](https://pic.rhinoc.top/15403076036764.jpg)
 
-*   两侧有凸起——可扩展
-*   背后有双面胶——可贴附
+- 两侧有凸起——可扩展
+- 背后有双面胶——可贴附
 
 ### 面包线&杜邦线
 
@@ -36,7 +36,7 @@ tags: ["arduino"]
 
 ## 实验一 Button&Blink
 
-详细资料：[按键控制LED实验——Arduino中文社区](https://www.arduino.cn/thread-74478-1-1.html)  
+详细资料：[按键控制 LED 实验——Arduino 中文社区](https://www.arduino.cn/thread-74478-1-1.html)  
 主要注意一下按键的内部构造：  
 ![](https://pic.rhinoc.top/15404669185878.jpg)  
 也就是说，按键按下的时候，电阻和按键所在线路导通。
@@ -48,19 +48,19 @@ tags: ["arduino"]
 ### 代码
 
 ```c
-#define LED 13 
-#define BUTTON 3 
+#define LED 13
+#define BUTTON 3
 
-int val=0; 
-int state=0; 
+int val=0;
+int state=0;
 
-void setup() { 
-  // put your setup code here, to run once: 
-  pinMode(LED,OUTPUT); 
-  pinMode(BUTTON,INPUT);  
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(LED,OUTPUT);
+  pinMode(BUTTON,INPUT);
   Serial.begin(9600);
 }
-void loop() { // put your main code here, to run repeatedly: 
+void loop() { // put your main code here, to run repeatedly:
   val = digitalRead(BUTTON);
   Serial.println(val);
   if(val==HIGH){
@@ -76,7 +76,7 @@ void loop() { // put your main code here, to run repeatedly:
     delay(200);
     break;
     }
-} 
+}
 ```
 
 ### 问题及解决方案
@@ -86,7 +86,5 @@ void loop() { // put your main code here, to run repeatedly:
 
 ### 成果演示
 
-最后来一张像素渣到爆炸的GIF感受一下：  
+最后来一张像素渣到爆炸的 GIF 感受一下：  
 ![](https://pic.rhinoc.top/soogif1%203.gif)
-
-

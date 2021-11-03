@@ -2,8 +2,7 @@
 title: 「JSON-to-HTML」根据JSON文件信息生成静态导航网页
 date: 2019-02-08
 category: etc
-tags: ["python"]
-
+tags: ['python']
 ---
 
 > 之前在 Gayhub 上 fork 了一个静态响应式导航[WebStack.cc](https://github.com/WebStackPage/WebStackPage.github.io)做了一个自己的网址导航「[造作家](https://index.rhinoc.top)」，具体的改造过程和未来的 Todo List 也许以后会单独写一篇博文。这篇博文只讲讲我是怎么用 Python 实现 HTML 的自动生成的。

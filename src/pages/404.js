@@ -8,8 +8,13 @@ const NotFoundPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
 
   return (
-    <Layout className="container--error" location={location} title={siteTitle} projectUrl={data.site.siteMetadata.projectUrl}>
-      <Seo title="404: Not Found"/>
+    <Layout
+      className="container--error"
+      location={location}
+      title={siteTitle}
+      projectUrl={data.site.siteMetadata.projectUrl}
+    >
+      <Seo title="404: Not Found" />
       <main>
         <div className="tag">Page not found</div>
         <div className="title">Error 404</div>

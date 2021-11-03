@@ -1,19 +1,19 @@
 ---
 title: 我用Gatsby重写了我的博客
-date: "2021-04-05"
-tags: ["gatsby","blog"]
+date: '2021-04-05'
+tags: ['gatsby', 'blog']
 category: etc
 ---
 
 ## 前言
 
-中学时，我建立了自己的第一个个人博客。那时候正是WordPress流行的时候，一键就能部署到服务器上，非常方便。不过由于服务器开销、配置复杂等原因，浅尝辄止后我便转投了在线博客平台的怀抱。我几乎在所有博客平台上注册了账号，Blogger、博客园、CSDN、tumblr——you name it, I have it. 对比各个平台后，我选择了可定制性强且社区开发氛围好的博客园落脚，时至今日，你还可以通过[Dicerorhinus](https://cnblogs.com/rhinoc)来访问它。
+中学时，我建立了自己的第一个个人博客。那时候正是 WordPress 流行的时候，一键就能部署到服务器上，非常方便。不过由于服务器开销、配置复杂等原因，浅尝辄止后我便转投了在线博客平台的怀抱。我几乎在所有博客平台上注册了账号，Blogger、博客园、CSDN、tumblr——you name it, I have it. 对比各个平台后，我选择了可定制性强且社区开发氛围好的博客园落脚，时至今日，你还可以通过[Dicerorhinus](https://cnblogs.com/rhinoc)来访问它。
 
-大学后，阿里云年费一百多的学生机对我已不再是负荷，且彼时的我已经习惯使用Markdown编写文档，这时Hexo进入到我的视野。来自台湾的Hexo具有在大陆程序员圈子传播的天然优势，中文社区环境非常繁荣。倾心于Hexo对Markdown的原生支持，以及其丰富的插件和主题，我决定将博客搬迁到Hexo上。你可以通过[Web Archive](https://web.archive.org/web/20200207013813/https://rhinoc.top/archives/)穿越回去查看老博客。
+大学后，阿里云年费一百多的学生机对我已不再是负荷，且彼时的我已经习惯使用 Markdown 编写文档，这时 Hexo 进入到我的视野。来自台湾的 Hexo 具有在大陆程序员圈子传播的天然优势，中文社区环境非常繁荣。倾心于 Hexo 对 Markdown 的原生支持，以及其丰富的插件和主题，我决定将博客搬迁到 Hexo 上。你可以通过[Web Archive](https://web.archive.org/web/20200207013813/https://rhinoc.top/archives/)穿越回去查看老博客。
 
-迄今为止，我在Hexo上记录了近百篇博文，不过实习的确中断了我的写博客习惯，等到我再进入服务器时发现已经中了一年多的挖矿病毒。病毒劫持了Hosts使我无法`git clone`在线仓库的杀毒脚本，尝试手动结束进程并删除文件后病毒仍能自启动，黔驴技穷，只好重装系统了。
+迄今为止，我在 Hexo 上记录了近百篇博文，不过实习的确中断了我的写博客习惯，等到我再进入服务器时发现已经中了一年多的挖矿病毒。病毒劫持了 Hosts 使我无法`git clone`在线仓库的杀毒脚本，尝试手动结束进程并删除文件后病毒仍能自启动，黔驴技穷，只好重装系统了。
 
-重装系统后，博客什么的，自然是没有了。那重新部署一遍Hexo？我迟疑了，博客系统这么多，我想探索其他的可能性。
+重装系统后，博客什么的，自然是没有了。那重新部署一遍 Hexo？我迟疑了，博客系统这么多，我想探索其他的可能性。
 
 ## Why Gatsby?
 
@@ -33,52 +33,51 @@ category: etc
 | [Halo](https://halo.run/)                   | Java      | Freemarker | CMS  | /            |
 | [**Pelican**](https://blog.getpelican.com/) | Python    | Jinja      | 静态 | Python       |
 
+由于我本来就有一台服务器，所以静态页面还是 CMS 对我的影响不大，我的主要选择条件有这些：
 
-由于我本来就有一台服务器，所以静态页面还是CMS对我的影响不大，我的主要选择条件有这些：
-
-1. 原生支持Markdown，且可通过插件实现扩展语法
-   * ~~WordPress~~
+1. 原生支持 Markdown，且可通过插件实现扩展语法
+   - ~~WordPress~~
 2. 生态繁荣，有大量免费可用的插件和主题
-   * ~~Ghost, Gridea, Halo~~
+   - ~~Ghost, Gridea, Halo~~
 3. 项目活跃，能得到持续的更新支持
-   * ~~Typecho, Gredia~~
+   - ~~Typecho, Gredia~~
 4. 模板可定制程度高，尽可能使用我熟悉的技术栈
-   * ~~Hugo, Jekyll, Gridsome, Pelican~~
+   - ~~Hugo, Jekyll, Gridsome, Pelican~~
 
 由于第四个条件因人而异，表格中对满足前三个条件的博客系统名称进行了加粗。
 
-对我来说，Gatsby就是我的不二之选了。
+对我来说，Gatsby 就是我的不二之选了。
 
 [[info]]
-|* 静态页面：
-|	1. 无后端，相对安全  
-|	2. 部署简单便宜，使用第三方服务甚至免费  
-|	3. 一般一个Markdown对应一个页面，迁移成本低
-|	4. 本机编辑文件发布到线上，不够灵活
-|* CMS：
-|	1. 有后端，面临数据库被攻击的危险  
-|	2. 需要部署到服务器上，有服务器开销  
-|	3. 使用数据库储存页面信息，迁移成本高  
-|	4. 提供在线的后台页面，发布方式灵活  
+|_ 静态页面：
+| 1. 无后端，相对安全  
+| 2. 部署简单便宜，使用第三方服务甚至免费  
+| 3. 一般一个 Markdown 对应一个页面，迁移成本低
+| 4. 本机编辑文件发布到线上，不够灵活
+|_ CMS：
+| 1. 有后端，面临数据库被攻击的危险  
+| 2. 需要部署到服务器上，有服务器开销  
+| 3. 使用数据库储存页面信息，迁移成本高  
+| 4. 提供在线的后台页面，发布方式灵活  
 |
-|可以使用Headless CMS作为静态页面的内容来源，实现诸如Ghost+Gatsby的级联使用。
+|可以使用 Headless CMS 作为静态页面的内容来源，实现诸如 Ghost+Gatsby 的级联使用。
 
 ## 网页设计
 
-选择Gatsby的一大原因就是「React，这玩意我熟悉啊」。所以不大刀阔斧重构下博客页面可说不过去。不过设计的灵感我是没有的，只能逛逛Dribbble和一些知名博客，把觉得好的设计都截图保存下来。
+选择 Gatsby 的一大原因就是「React，这玩意我熟悉啊」。所以不大刀阔斧重构下博客页面可说不过去。不过设计的灵感我是没有的，只能逛逛 Dribbble 和一些知名博客，把觉得好的设计都截图保存下来。
 
 ### 玻璃拟态
 
-当我看到[Dwinawan的博客](https://dwinawan.com/bookmark.html)时，「决定就是你了，<ruby>玻璃拟态<rt>Glassmorphism</rt></ruby>」。
+当我看到[Dwinawan 的博客](https://dwinawan.com/bookmark.html)时，「决定就是你了，<ruby>玻璃拟态<rt>Glassmorphism</rt></ruby>」。
 
 ![Dwinawan.com](../media/20210406Zez8RWoe.png)
 
 玻璃拟态具有如下特征：
 
-* 透明+背景模糊形成的毛玻璃效果
-* 鲜艳的渐变背景（用来突出透明效果）
-* 纤细的浅色边框模拟玻璃边缘
-* 通过改变阴影和透明度形成层次感
+- 透明+背景模糊形成的毛玻璃效果
+- 鲜艳的渐变背景（用来突出透明效果）
+- 纤细的浅色边框模拟玻璃边缘
+- 通过改变阴影和透明度形成层次感
 
 ![Glassmorphism, 素材来自 https://uxdesign.cc/](../media/neYOcbYpPcvHoX0leSjH7w.png)
 
@@ -94,12 +93,12 @@ category: etc
 
 我对小标题进行了如下处理：
 
-* 每个二级标题 `<h2>` 前加上井字符号（一级标题对应文章标题，正文中一般不会出现），方便滚动浏览时快速定位。
-* `<h3>` ~ `<h6> `在hover状态同样会显示井字符号，方便复制链接。
-* 标题的上间距>下间距，与上文分隔开。
-* 对于级联的标题，比如二级标题下紧接着三级标题，会减少它们之间的间距。
+- 每个二级标题 `<h2>` 前加上井字符号（一级标题对应文章标题，正文中一般不会出现），方便滚动浏览时快速定位。
+- `<h3>` ~ `<h6> `在 hover 状态同样会显示井字符号，方便复制链接。
+- 标题的上间距>下间距，与上文分隔开。
+- 对于级联的标题，比如二级标题下紧接着三级标题，会减少它们之间的间距。
 
-正文部分，我使用了1.5倍的行距，1.25倍的段落间隔，保证段落结构的清晰。
+正文部分，我使用了 1.5 倍的行距，1.25 倍的段落间隔，保证段落结构的清晰。
 
 此外，在列表、块引用和链接部分，都使用了主题色进行点缀和强调。
 
@@ -107,23 +106,27 @@ category: etc
 
 ### 玻璃拟态效果
 
-1. 使用1px的半透明白色模拟玻璃边缘。
+1. 使用 1px 的半透明白色模拟玻璃边缘。
 
-2. 使用放射渐变模拟玻璃面。这里我是通过Figma先调试好后再复制对应的样式代码。
-3. 使用 `backdrop-filter: blur()` 实现背景模糊。但CSS中模糊滤镜的性能很差，在背景变化（比如背景固定时滚动页面等<ruby>视差滚动场景<rt>Parallax Scrolling</rt></ruby>）时帧数会出现明显下降，甚至出现内容丢失。虽然可以使用 `backface-visibility` 等属性强制硬件加速，不过性能提升因人而异，建议还是不要在滚动页面使用模糊滤镜。
+2. 使用放射渐变模拟玻璃面。这里我是通过 Figma 先调试好后再复制对应的样式代码。
+3. 使用 `backdrop-filter: blur()` 实现背景模糊。但 CSS 中模糊滤镜的性能很差，在背景变化（比如背景固定时滚动页面等<ruby>视差滚动场景<rt>Parallax Scrolling</rt></ruby>）时帧数会出现明显下降，甚至出现内容丢失。虽然可以使用 `backface-visibility` 等属性强制硬件加速，不过性能提升因人而异，建议还是不要在滚动页面使用模糊滤镜。
 
 ```css
 .glass {
-    box-shadow: rgba(0, 0, 0, 0.06) 0px 5px 30px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    background: radial-gradient(100% 216.12% at 1.81% 0%, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%);
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 5px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: radial-gradient(
+    100% 216.12% at 1.81% 0%,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
 
-  	backface-visibility: hidden;
-    perspective: 1000;
-    transform: translate3d(0,0,0);
-    transform: translateZ(0);
-  	backdrop-filter: blur(.6rem);
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform: translate3d(0, 0, 0);
+  transform: translateZ(0);
+  backdrop-filter: blur(0.6rem);
 }
 ```
 
@@ -131,7 +134,7 @@ category: etc
 
 #### 语言指示符
 
-代码高亮使用了[gatsby-remark-prismjs](https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/)插件，并且可以利用其生成的HTML属性信息在代码块上显示代码语言。
+代码高亮使用了[gatsby-remark-prismjs](https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/)插件，并且可以利用其生成的 HTML 属性信息在代码块上显示代码语言。
 
 ```html
 <!--PrismJS生成的HTML-->
@@ -153,7 +156,7 @@ category: etc
   position: absolute;
   top: 0px;
   left: 1.5rem;
-  
+
   border-radius: 0px 0px 4px 4px;
   padding: 0.25rem 0.5rem;
   background: black;
@@ -165,7 +168,7 @@ category: etc
 当然还可以为不同语言设置不同的背景颜色：
 
 ```css
-.gatsby-highlight[data-language="bash"]::before {
+.gatsby-highlight[data-language='bash']::before {
   color: black;
   background: rgb(136, 224, 81);
 }
@@ -175,7 +178,7 @@ category: etc
 
 #### 代码块标题栏
 
-使用了插件[gatsby-remark-code-titles](https://github.com/DSchau/gatsby-remark-code-titles)，其作用是在代码块前生成一个同级的 `<div>` 元素，可以利用这个元素来模仿macOS窗口的标题栏。
+使用了插件[gatsby-remark-code-titles](https://github.com/DSchau/gatsby-remark-code-titles)，其作用是在代码块前生成一个同级的 `<div>` 元素，可以利用这个元素来模仿 macOS 窗口的标题栏。
 
 ```css
 .gatsby-code-title {
@@ -207,9 +210,9 @@ category: etc
 }
 ```
 
-由于该插件还存在SVG、Tooltip、Toaster等元素，所以还需要将这些元素 `display: none;` 。
+由于该插件还存在 SVG、Tooltip、Toaster 等元素，所以还需要将这些元素 `display: none;` 。
 
-### 自定义Markdown语法
+### 自定义 Markdown 语法
 
 使用[gatsby-remark-custom-blocks](https://www.gatsbyjs.com/plugins/gatsby-remark-custom-blocks/)实现。
 
@@ -219,29 +222,30 @@ category: etc
 
 ## Credits
 
-* [Dwinawan](https://dwinawan.com/bookmark.html)
-  * 背景中的渐变色线条 Gradient lines in the background (**use material directly**)
-  * 深色模式下的背景图片 Background image in dark mode (**use material directly**)
-  * 网页右上方导航栏布局 Layout of the top right navigation bar (for inspiration)
-  * 首页分类导航栏布局 Layout of the category navigation in INDEX page (for inspiration)
-  * 博文页面头像布局 Layout of avatar and name in POST page (for inspiration)
-  * 毛玻璃质感 Glass morphism (for inspiration)
-* [Apple Memoji](https://support.apple.com/en-us/HT208986)
-  * 我的头像 My avatar (**use material directly**)
-  * About页面头图 Image in ABOUT page (**use material directly**)
-* [Tania Rascia](https://www.taniarascia.com/)
-  * 仿macOS标题栏的代码块样式 macOS title bar like code block (**use source code directly**)
-* [GatsbyJS](https://www.gatsbyjs.com/plugins/gatsby-theme-blog/)
-  * 代码块代码语言指示符布局 Language indicator in code block (**use source code directly**)
-  * 代码块复制按钮布局 Copy button in code block (for inspiration)
-* [CSS Tricks](https://css-tricks.com/)
-  * 博文页面返回顶部按钮 Back to top button in POST page (for inspiration)
-* [TriDiamond's Blog](https://tridiamond.tech/)
-  * 博文页面标签按钮 Tag button in POST page (for inspiration)
-* [Seva](https://dribbble.com/shots/5893791-Figma-DailyUI-085-Pagination)
-  * 分页组件布局 Pagination (for inspiration)
+- [Dwinawan](https://dwinawan.com/bookmark.html)
+  - 背景中的渐变色线条 Gradient lines in the background (**use material directly**)
+  - 深色模式下的背景图片 Background image in dark mode (**use material directly**)
+  - 网页右上方导航栏布局 Layout of the top right navigation bar (for inspiration)
+  - 首页分类导航栏布局 Layout of the category navigation in INDEX page (for inspiration)
+  - 博文页面头像布局 Layout of avatar and name in POST page (for inspiration)
+  - 毛玻璃质感 Glass morphism (for inspiration)
+- [Apple Memoji](https://support.apple.com/en-us/HT208986)
+  - 我的头像 My avatar (**use material directly**)
+  - About 页面头图 Image in ABOUT page (**use material directly**)
+- [Tania Rascia](https://www.taniarascia.com/)
+  - 仿 macOS 标题栏的代码块样式 macOS title bar like code block (**use source code directly**)
+- [GatsbyJS](https://www.gatsbyjs.com/plugins/gatsby-theme-blog/)
+  - 代码块代码语言指示符布局 Language indicator in code block (**use source code directly**)
+  - 代码块复制按钮布局 Copy button in code block (for inspiration)
+- [CSS Tricks](https://css-tricks.com/)
+  - 博文页面返回顶部按钮 Back to top button in POST page (for inspiration)
+- [TriDiamond's Blog](https://tridiamond.tech/)
+  - 博文页面标签按钮 Tag button in POST page (for inspiration)
+- [Seva](https://dribbble.com/shots/5893791-Figma-DailyUI-085-Pagination)
+  - 分页组件布局 Pagination (for inspiration)
 
 ## 参考资料
-* [Which is the Best Static Site Generator and Why? - Dev.to](https://dev.to/oyetoket/which-is-the-best-static-site-generator-and-why-42e2)
-* [CSS Blur Filter Performance - StackOverflow](https://stackoverflow.com/questions/31713468/css-blur-filter-performance)
-* [Glassmorphism in user interfaces - UX Collective](https://uxdesign.cc/glassmorphism-in-user-interfaces-1f39bb1308c9)
+
+- [Which is the Best Static Site Generator and Why? - Dev.to](https://dev.to/oyetoket/which-is-the-best-static-site-generator-and-why-42e2)
+- [CSS Blur Filter Performance - StackOverflow](https://stackoverflow.com/questions/31713468/css-blur-filter-performance)
+- [Glassmorphism in user interfaces - UX Collective](https://uxdesign.cc/glassmorphism-in-user-interfaces-1f39bb1308c9)

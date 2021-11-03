@@ -1,6 +1,9 @@
 import { useState, useEffect, useCallback } from 'react';
 
-const getDarkMode = () => typeof window === 'object' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+const getDarkMode = () =>
+  typeof window === 'object' &&
+  window.matchMedia &&
+  window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 const useDarkMode = () => {
   const [darkMode, setDarkMode] = useState(getDarkMode);
@@ -25,7 +28,10 @@ const useDarkMode = () => {
         console.error(addListenerError);
       }
     }
-    return () => window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', handleChange);
+    return () =>
+      window
+        .matchMedia('(prefers-color-scheme: dark)')
+        .removeEventListener('change', handleChange);
   }, [handleChange]);
 
   return darkMode;

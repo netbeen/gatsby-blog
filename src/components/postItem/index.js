@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-import { Timer as TimerIcon, Calendar as DateIcon } from '@styled-icons/remix-fill';
+import {
+  Timer as TimerIcon,
+  Calendar as DateIcon,
+} from '@styled-icons/remix-fill';
 import './index.scss';
 
 const PostItem = ({ title, url, description, date, timeToRead }) => (

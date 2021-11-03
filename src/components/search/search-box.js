@@ -6,13 +6,20 @@ export default connectSearchBox(({ show, refine, currentRefinement }) => {
   const inputRef = useRef(null);
 
   useEffect(() => {
-    show && inputRef.current && inputRef.current.focus()
-  }, [show])
+    show && inputRef.current && inputRef.current.focus();
+  }, [show]);
 
   return (
-      <form className='search-box'>
-        <SearchIcon className="icon"/>
-        <input placeholder='Search by algolia' className='search-input' type="text" onChange={e => refine(e.target.value)} value={currentRefinement} ref={inputRef}></input>
-      </form>
+    <form className="search-box">
+      <SearchIcon className="icon" />
+      <input
+        placeholder="Search by algolia"
+        className="search-input"
+        type="text"
+        onChange={(e) => refine(e.target.value)}
+        value={currentRefinement}
+        ref={inputRef}
+      ></input>
+    </form>
   );
 });

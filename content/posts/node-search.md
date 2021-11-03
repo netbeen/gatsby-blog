@@ -2,7 +2,7 @@
 title: 两分钟写个NodeJS，让Chrome根据输入语言切换搜索引擎
 date: 2020-03-02
 category: frontend
-tags: ["nodejs"]
+tags: ['nodejs']
 ---
 
 我们总说，Google 是最好的搜索引擎，百度是最好的中文搜索引擎。但是默认搜索引擎只有一个，怎么能让我在输入中文时使用百度，其他语言的时候切换到 Google 呢。

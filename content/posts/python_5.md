@@ -2,8 +2,7 @@
 title: Python编程快速上手（五）百度搜索+
 date: 2019-01-31
 category: etc
-tags: ["python"]
-
+tags: ['python']
 ---
 
 ## 程序描述
@@ -12,29 +11,29 @@ tags: ["python"]
 
 ## 涉及知识点
 
-*   HTTP headers
-*   requests
-*   webbrowser
-*   bs4
+- HTTP headers
+- requests
+- webbrowser
+- bs4
 
 ## 几个要点
 
-> 这个小程序对应书上`p202`页码的 「11.6 项目：”I’m Feeling Lucky” Google 查找」 ，不过我将其中的🔍搜索引擎从谷歌换成了百度。
+> 这个小程序对应书上`p202`页码的 「11.6 项目：”I’m Feeling Lucky” Google 查找」 ，不过我将其中的 🔍 搜索引擎从谷歌换成了百度。
 
 ### BeautifulSoup4-Warning
 
-书中给的代码`soup = bs4.BeautifulSoup(res.text)`会引发下面👇的警告。
+书中给的代码`soup = bs4.BeautifulSoup(res.text)`会引发下面 👇 的警告。
 
 > UserWarning: No parser was explicitly specified, so I’m using the best available HTML parser for this system (“html5lib”). This usually isn’t a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.
-> 
+>
 > To get rid of this warning, change this:
-> 
+>
 > BeautifulSoup([your markup])
-> 
+>
 > to this:
-> 
+>
 > BeautifulSoup([your markup], “html.parser”)
-> 
+>
 > markup_type=markup_type))
 
 根据提示，修改此行代码为：  
@@ -42,11 +41,11 @@ tags: ["python"]
 
 ### 伪造请求头
 
-本部分参考了[Python利用requests和re模块爬取百度图片](https://blog.csdn.net/lylfv/article/details/81570307)
+本部分参考了[Python 利用 requests 和 re 模块爬取百度图片](https://blog.csdn.net/lylfv/article/details/81570307)
 
-直接照搬源代码之后发现无论如何修改Select，`linkElems`中都没有元素。在网上查了一下，才发现是百度屏蔽了Python的请求，所以需要伪造一个请求头才能得到正确的响应。
+直接照搬源代码之后发现无论如何修改 Select，`linkElems`中都没有元素。在网上查了一下，才发现是百度屏蔽了 Python 的请求，所以需要伪造一个请求头才能得到正确的响应。
 
-以Firefox为例，`F12`打开Toggle Tools，切换到`Network`选项卡，点击`XHR`子选项，刷新页面后得到请求项，单击就能看到请求头。  
+以 Firefox 为例，`F12`打开 Toggle Tools，切换到`Network`选项卡，点击`XHR`子选项，刷新页面后得到请求项，单击就能看到请求头。  
 ![](https://pic.rhinoc.top/15489382993709.jpg)
 
 ## 代码

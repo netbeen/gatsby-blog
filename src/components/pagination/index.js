@@ -6,7 +6,9 @@ import './index.scss';
 
 let genPageList = (cur, last) => {
   const raw = [1, cur - 2, cur - 1, cur, cur + 1, cur + 2, last];
-  let nums = Array.from(new Set(raw.filter(item => item >= 1 && item <= last)));
+  let nums = Array.from(
+    new Set(raw.filter((item) => item >= 1 && item <= last))
+  );
   const res = [1];
   for (let i = 1; i < nums.length - 1; i++) {
     if (nums[i] - 1 !== nums[i - 1]) {
@@ -24,17 +26,27 @@ let genPageList = (cur, last) => {
   return res;
 };
 
-const Pagination = ({pageContext, location}) => {
-  const { previousPagePath, nextPagePath, humanPageNumber, numberOfPages } = pageContext;
+const Pagination = ({ pageContext, location }) => {
+  const {
+    previousPagePath,
+    nextPagePath,
+    humanPageNumber,
+    numberOfPages,
+  } = pageContext;
   let baseUrl = location.pathname.replace(/\/page\/.*/, '');
   baseUrl = baseUrl[baseUrl.length - 1] === '/' ? baseUrl : `${baseUrl}/`;
   const PATH_ROOT = '';
   const PATH_PAGE = 'page/';
   const PATH_PREV = previousPagePath || `/${PATH_ROOT}`;
-  const PATH_NEXT = nextPagePath || `/${PATH_PAGE}${numberOfPages}`
+  const PATH_NEXT = nextPagePath || `/${PATH_PAGE}${numberOfPages}`;
 
   const prevIcon = (
-    <Link to={PATH_PREV} className={`purea pagination__icon ${!previousPagePath && 'pagination__icon--disabled'}`}>
+    <Link
+      to={PATH_PREV}
+      className={`purea pagination__icon ${
+        !previousPagePath && 'pagination__icon--disabled'
+      }`}
+    >
       <div className="item-wrapper item-wrapper--chevron">
         <LeftIcon className="icon" />
       </div>
@@ -42,7 +54,12 @@ const Pagination = ({pageContext, location}) => {
   );
 
   const nextIcon = (
-    <Link to={PATH_NEXT} className={`purea pagination__icon ${!nextPagePath && 'pagination__icon--disabled'}`}>
+    <Link
+      to={PATH_NEXT}
+      className={`purea pagination__icon ${
+        !nextPagePath && 'pagination__icon--disabled'
+      }`}
+    >
       <div className="item-wrapper item-wrapper--chevron">
         <RightIcon className="icon" />
       </div>
@@ -63,14 +80,19 @@ const Pagination = ({pageContext, location}) => {
     </div>
   );
 
-  const pageList = pageNumbers.map(number => {
+  const pageList = pageNumbers.map((number) => {
     let className = number === humanPageNumber ? 'item-wrapper--active' : '';
-    let url = number === 1 ? `${baseUrl}${PATH_ROOT}` : `${baseUrl}${PATH_PAGE}${number}`;
+    let url =
+      number === 1
+        ? `${baseUrl}${PATH_ROOT}`
+        : `${baseUrl}${PATH_PAGE}${number}`;
 
     if (number === -1) {
       return Devider;
     } else {
-      return <PageLink className={className} str={number} key={url} url={url} />;
+      return (
+        <PageLink className={className} str={number} key={url} url={url} />
+      );
     }
   });
 

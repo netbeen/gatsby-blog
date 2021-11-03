@@ -2,8 +2,7 @@
 title: macOS新手开发教程（二）构建菜单栏应用
 date: 2020-01-25
 category: etc
-tags: ["swift"]
-
+tags: ['swift']
 ---
 
 ## 本章目标
@@ -27,12 +26,12 @@ tags: ["swift"]
 
 在导航区可以看到项目中包括两个文件夹，一个是与项目名同名的文件夹，其下是构建程序的源代码，另一个`Products`存放编译后的应用，如果将编译后的应用拖到`Applications`文件夹就算安装好了。
 
--   AppDelegate.swift 负责应用程序的生命周期
--   ViewController.swift 负责设置 storyboard 中的视图
--   Main.storyboard 视图
--   Assets.xcassets 保存媒体文件
--   [Info.plist](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Introduction/Introduction.html) 信息属性配置文件
--   [...entitlements](https://developer.apple.com/documentation/bundleresources/entitlements) 权限配置文件
+- AppDelegate.swift 负责应用程序的生命周期
+- ViewController.swift 负责设置 storyboard 中的视图
+- Main.storyboard 视图
+- Assets.xcassets 保存媒体文件
+- [Info.plist](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Introduction/Introduction.html) 信息属性配置文件
+- [...entitlements](https://developer.apple.com/documentation/bundleresources/entitlements) 权限配置文件
 
 ## 创建菜单栏应用
 

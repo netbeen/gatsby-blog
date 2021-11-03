@@ -2,8 +2,7 @@
 title: macOS新手开发教程（一）准备工作
 date: 2019-10-20
 category: etc
-tags: ["swift"]
-
+tags: ['swift']
 ---
 
 ## 发刊词
@@ -41,21 +40,21 @@ xip -x ~/Downloads/Xcode_11.2.xip
 
 本系列教程基于平台：
 
--   macOS 10.15.2
--   Xcode 11.1 (11A1027)
+- macOS 10.15.2
+- Xcode 11.1 (11A1027)
 
 ## 上手 Xcode
 
 打开 Xcode 后，创建我们的第一个 macOS App 项目。
 ![](https://pic.rhinoc.top/mweb/15722485065746.jpg)
 
--   Product Name：应用的名称
--   Team：选择你的 Apple 开发者账户，或者选 None
--   Organization Name：你的企业名字或者你自己的名字
--   Organization Identifier：用来确认你是你。一般是`com.`加上 Organization Name。
--   Bundle Name：用来确认你的应用是你的应用。一般是 Organization Identifier 加上 Product Name。
--   Language：开发 macOS 使用的语言，可选 Objective-C 和 Swift。Swift 是如今开发 iOS/macOS 应用的标准语言，由 Apple 推出；在此之前开发者使用的是 Objective-C。
--   User Interface：用户界面，可选 SwiftUI、XIB 和 Storyboard。SwiftUI 最近刚由 Apple 推出，尚不成熟；而 Storyboard 是如今开发 iOS/macOS 应用的主流语言；更早之前开发者使用 XIB 开发 macOS 应用。
+- Product Name：应用的名称
+- Team：选择你的 Apple 开发者账户，或者选 None
+- Organization Name：你的企业名字或者你自己的名字
+- Organization Identifier：用来确认你是你。一般是`com.`加上 Organization Name。
+- Bundle Name：用来确认你的应用是你的应用。一般是 Organization Identifier 加上 Product Name。
+- Language：开发 macOS 使用的语言，可选 Objective-C 和 Swift。Swift 是如今开发 iOS/macOS 应用的标准语言，由 Apple 推出；在此之前开发者使用的是 Objective-C。
+- User Interface：用户界面，可选 SwiftUI、XIB 和 Storyboard。SwiftUI 最近刚由 Apple 推出，尚不成熟；而 Storyboard 是如今开发 iOS/macOS 应用的主流语言；更早之前开发者使用 XIB 开发 macOS 应用。
 
 {% blockquote Mark Szymczyk https://www.swiftdevjournal.com/introduction-to-mac-development-create-a-project/ Swift Dev Journal %}
 Storyboards let you see the app’s entire user interface in one place. Storyboards also make working with view controllers easier. But xib files make creating master-detail interfaces easier.
@@ -63,10 +62,10 @@ Storyboards let you see the app’s entire user interface in one place. Storyboa
 Storyboard 可以让你在一个地方管理所有用户界面，而 XIB 能让你更方便地创建主从结构的用户界面。
 {% endblockquote %}
 
--   Create Document-Based Application：当你的应用是文档类型应用，且需要使用 Apple 文档体系时开启。
--   Document Extension
-    -   Use Core Data：当需要在设备上保存本地数据时开启。
-    -   Include Unit Tests & Include UI Test：当你的应用非常大，需要进行自动化测试的时候开启
+- Create Document-Based Application：当你的应用是文档类型应用，且需要使用 Apple 文档体系时开启。
+- Document Extension
+  - Use Core Data：当需要在设备上保存本地数据时开启。
+  - Include Unit Tests & Include UI Test：当你的应用非常大，需要进行自动化测试的时候开启
 
 创建完成项目后，就能看到 Xcode 的全貌了。
 ![](https://pic.rhinoc.top/mweb/15722521122242.jpg)
@@ -134,9 +133,9 @@ Storyboard 可以让你在一个地方管理所有用户界面，而 XIB 能让�
 ![](https://pic.rhinoc.top/mweb/15722565964715.jpg)
 
 1. Build&Run：编译并运行，长按可以显示更多操作
-    1. Test：运行单元测试
-    2. Profile：测试应用程序的性能
-    3. Analyze：分析应用程序可能存在的问题
+   1. Test：运行单元测试
+   2. Profile：测试应用程序的性能
+   3. Analyze：分析应用程序可能存在的问题
 2. Stop：终止应用程序的运行
 3. Status Bar：查看应用程序的运行状态
 4. Object Library：控件库

@@ -16,7 +16,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
       {
-        postsRemark: allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }, limit: 1000) {
+        postsRemark: allMarkdownRemark(
+          sort: { fields: [frontmatter___date], order: ASC }
+          limit: 1000
+        ) {
           nodes {
             id
             fields {
@@ -39,7 +42,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   );
 
   if (result.errors) {
-    reporter.panicOnBuild(`There was an error loading your blog posts`, result.errors);
+    reporter.panicOnBuild(
+      `There was an error loading your blog posts`,
+      result.errors
+    );
     return;
   }
 
@@ -50,7 +56,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   createPage({
     path: `/about/`,
     component: aboutTemplate,
-  })
+  });
 
   // create POST pages
   posts.forEach(async (post, index) => {
@@ -66,15 +72,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   });
 
   // create TAG pages
-  tags.forEach(async tag => createPage({
-    path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
-    component: tagTemplate,
-    context: {
-      tag: tag.fieldValue,
-    },
-  }));
+  tags.forEach(async (tag) =>
+    createPage({
+      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      component: tagTemplate,
+      context: {
+        tag: tag.fieldValue,
+      },
+    })
+  );
 
-  const promises = cates.map(async cate=>{
+  const promises = cates.map(async (cate) => {
     const cateResult = await graphql(
       `
       {
@@ -96,12 +104,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       items: catePosts,
       itemsPerPage: 8,
       component: indexTemplate,
-      pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? `/categories/${cateKebab}` : `/categories/${cateKebab}/page`),
+      pathPrefix: ({ pageNumber }) =>
+        pageNumber === 0
+          ? `/categories/${cateKebab}`
+          : `/categories/${cateKebab}/page`,
       context: {
         cate: `/${cate.fieldValue}/`,
       },
     });
-  })
+  });
 
   await Promise.all(promises);
 

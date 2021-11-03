@@ -14,7 +14,13 @@ import 'katex/dist/katex.min.css';
 
 const Avatar = () => (
   <Link className="purea avatar-wrapper" to="/about">
-    <StaticImage className="avatar" src="../images/memoji.png" alt="avatar" quality={100} placeholder="blurred"/>
+    <StaticImage
+      className="avatar"
+      src="../images/memoji.png"
+      alt="avatar"
+      quality={100}
+      placeholder="blurred"
+    />
   </Link>
 );
 
@@ -36,7 +42,7 @@ const BlogPostTemplate = ({ data, location }) => {
   useEffect(() => {
     /* BackTop & StickyToc */
     const observer = new IntersectionObserver(
-      e => {
+      (e) => {
         setShowBackTop(!e[0].isIntersecting);
         setStickyToc(e[0].isIntersecting);
       },
@@ -67,7 +73,8 @@ const BlogPostTemplate = ({ data, location }) => {
       hasInnerContainers: true,
     });
     return () => {
-      for (let i = 0; i < toggles.length; i++) toggles[i].removeEventListener('click', listeners[i]);
+      for (let i = 0; i < toggles.length; i++)
+        toggles[i].removeEventListener('click', listeners[i]);
       tocbot.destroy();
       observer.disconnect();
     };
@@ -79,7 +86,10 @@ const BlogPostTemplate = ({ data, location }) => {
 
   return (
     <Layout location={location} projectUrl={data.site.siteMetadata.projectUrl}>
-      <Seo title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
+      <Seo
+        title={post.frontmatter.title}
+        description={post.frontmatter.description || post.excerpt}
+      />
       <div className="post">
         <header className="post__header">
           <div className="post__header__info--top">
@@ -94,10 +104,17 @@ const BlogPostTemplate = ({ data, location }) => {
             </div>
           </div>
         </header>
-        <article dangerouslySetInnerHTML={{ __html: post.html }} className="post__body glass" />
+        <article
+          dangerouslySetInnerHTML={{ __html: post.html }}
+          className="post__body glass"
+        />
         <footer className="post__footer">
           {previous && (
-            <Link to={previous.fields.slug} rel="prev" className="prev glass purea">
+            <Link
+              to={previous.fields.slug}
+              rel="prev"
+              className="prev glass purea"
+            >
               <div className="desc">← Previous</div>
               <div className="post-title">{previous.frontmatter.title}</div>
             </Link>
@@ -110,19 +127,32 @@ const BlogPostTemplate = ({ data, location }) => {
           )}
         </footer>
       </div>
-      <div className={`tocbot-wrapper ${stickyToc ? '' : 'tocbot-wrapper--sticky'}`}>
+      <div
+        className={`tocbot-wrapper ${
+          stickyToc ? '' : 'tocbot-wrapper--sticky'
+        }`}
+      >
         <div
           className={showToc ? 'button' : 'button button--hide'}
           onClick={() => setShowToc(!showToc)}
           onKeyPress={() => {}}
           role="button"
           tabIndex={0}
-        >{`<TOC/>`}
+        >
+          {`<TOC/>`}
         </div>
         <div id="tocbot" className={showToc ? 'accerator tocbot' : 'hide'} />
       </div>
-      <div className={`backtop-wrapper ${showBackTop ? '' : 'hide'}`} id="back_top">
-        <a href="#top" data-scroll="#top" className="backtop" title="Back to top">
+      <div
+        className={`backtop-wrapper ${showBackTop ? '' : 'hide'}`}
+        id="back_top"
+      >
+        <a
+          href="#top"
+          data-scroll="#top"
+          className="backtop"
+          title="Back to top"
+        >
           <BackTopIcon />
         </a>
       </div>
@@ -133,7 +163,11 @@ const BlogPostTemplate = ({ data, location }) => {
 export default BlogPostTemplate;
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($id: String!, $previousPostId: String, $nextPostId: String) {
+  query BlogPostBySlug(
+    $id: String!
+    $previousPostId: String
+    $nextPostId: String
+  ) {
     site {
       siteMetadata {
         author {

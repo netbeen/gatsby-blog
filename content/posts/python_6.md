@@ -2,22 +2,21 @@
 title: Python编程快速上手（六）人人影视资源搜索器
 date: 2019-02-02
 category: etc
-tags: ["python"]
-
+tags: ['python']
 ---
 
 ## 程序描述
 
-输入关键字，在[人人影视](www.zimuzu.io)中搜索影视剧，回显搜索结果，输入编号得到ed2k链接🔗。  
+输入关键字，在[人人影视](www.zimuzu.io)中搜索影视剧，回显搜索结果，输入编号得到 ed2k 链接 🔗。  
 ![](https://pic.rhinoc.top/15490405569586.jpg?imageslim)  
-由于人人影视采用等级制度，资源下载链接需要登录后才能查看，所以这里用`session`模拟登陆。这一块参考了Github上[tengbozhang/renren](https://github.com/tengbozhang/renren)这一项目。
+由于人人影视采用等级制度，资源下载链接需要登录后才能查看，所以这里用`session`模拟登陆。这一块参考了 Github 上[tengbozhang/renren](https://github.com/tengbozhang/renren)这一项目。
 
 ## 涉及知识点
 
-*   session
-*   requests
-*   bs4
-*   RegEx
+- session
+- requests
+- bs4
+- RegEx
 
 ## 代码
 

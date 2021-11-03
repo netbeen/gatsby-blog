@@ -2,17 +2,16 @@
 title: Python编程快速上手（八）Unsplash多线程批量下载器
 date: 2019-02-17
 category: etc
-tags: ["python"]
-
+tags: ['python']
 ---
 
 ## 程序描述
 
-在[上一版本的Unsplash批量下载器](.\python_7.html)中，程序实现了批量爬取Unsplash网站图片的功能，但是下载速度较慢。在这一版本中，将使用Python中`threading`库实现多线程下载。
+在[上一版本的 Unsplash 批量下载器](.\python_7.html)中，程序实现了批量爬取 Unsplash 网站图片的功能，但是下载速度较慢。在这一版本中，将使用 Python 中`threading`库实现多线程下载。
 
 ## 涉及知识点
 
-*   threading
+- threading
 
 ## 程序逻辑
 

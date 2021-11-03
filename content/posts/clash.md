@@ -2,8 +2,7 @@
 title: 可能是最适合macOS的网上冲浪之术
 date: 2020-03-02
 category: etc
-tags: ["mac-flow"]
-
+tags: ['mac-flow']
 ---
 
 > 搞学术搞开发，怎么可能不接触点国外的东西呢？

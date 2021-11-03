@@ -4,7 +4,7 @@ This repo is the source code for [OuttaScope](https://outtascope.tech/) (powered
 
 You can see the [Hello Wolrd](https://outtascope.tech/posts/hello-world/) page for the detailed style of blog posts.
 
-I also wrote a blog post about how I rewrite my blog with Gatsby: [我用Gatsby重写了我的博客](https://outtascope.tech/posts/gatsby/).
+I also wrote a blog post about how I rewrite my blog with Gatsby: [我用 Gatsby 重写了我的博客](https://outtascope.tech/posts/gatsby/).
 
 ```shell
 npm install # install dependencies

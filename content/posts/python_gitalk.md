@@ -2,17 +2,16 @@
 title: 「Python」读取站点地图 自动为Gitalk创建Issues
 date: 2019-02-09
 category: etc
-tags: ["python"]
-
+tags: ['python']
 ---
 
 ## 前言
 
-前些天给博客加了评论功能，试了Disqus、Valine等一干评论系统，最后还是选择了在大陆相对友好而且符合技术博客风格的Gitalk。但是由于Gitalk是利用Github里Repo的Issue实现评论功能，所以每篇博文都需要手动创建Issue，很是麻烦。于是就打算用Python写一个自动初始化的脚本。
+前些天给博客加了评论功能，试了 Disqus、Valine 等一干评论系统，最后还是选择了在大陆相对友好而且符合技术博客风格的 Gitalk。但是由于 Gitalk 是利用 Github 里 Repo 的 Issue 实现评论功能，所以每篇博文都需要手动创建 Issue，很是麻烦。于是就打算用 Python 写一个自动初始化的脚本。
 
-## Gitalk的原理
+## Gitalk 的原理
 
-知己知彼，百战不殆。写脚本之前，我们得先知道Gitalk是通过什么确定文章和Issue之间的关系的。通过查看[文档](https://github.com/gitalk/gitalk/blob/master/readme-cn.md)可以得到下面👇四个我们需要的参数。
+知己知彼，百战不殆。写脚本之前，我们得先知道 Gitalk 是通过什么确定文章和 Issue 之间的关系的。通过查看[文档](https://github.com/gitalk/gitalk/blob/master/readme-cn.md)可以得到下面 👇 四个我们需要的参数。
 
 <div class="table-container">
 
@@ -90,15 +89,15 @@ tags: ["python"]
 
 </div>
 
-那么再看看Gitalk初始化时自动生成的Issue：  
+那么再看看 Gitalk 初始化时自动生成的 Issue：  
 ![](https://pic.rhinoc.top/15497140095951.jpg)
 
-在被这张图中，四个参数的值分别为：  
+在被这张图中，四个参数的值分别为：
 
 ```
-title: "渲染测试 | Dicerorhinus"  
-labels: ['Gitalk','/post/themes-test.html']  
-body: "https://rhinoc.top/post/themes-test.html"  
+title: "渲染测试 | Dicerorhinus"
+labels: ['Gitalk','/post/themes-test.html']
+body: "https://rhinoc.top/post/themes-test.html"
 ```
 
 诶，`id`去哪了？  
@@ -138,9 +137,9 @@ body: "https://rhinoc.top/post/themes-test.html"
 
 ## 几个要点
 
-### `id`须在50个字符以内
+### `id`须在 50 个字符以内
 
-文档中已经指明了`id`和博文一对一的关系，并且在Gitalk自动生成的Issue中，`id`被设置为是博文所在的相对路径。由于`id`被限制在50个字符以内，所以当相对路径比较长时，就不适合作为`id`了，这时候可以使用MD5将相对路径编码：
+文档中已经指明了`id`和博文一对一的关系，并且在 Gitalk 自动生成的 Issue 中，`id`被设置为是博文所在的相对路径。由于`id`被限制在 50 个字符以内，所以当相对路径比较长时，就不适合作为`id`了，这时候可以使用 MD5 将相对路径编码：
 
 ```python
 def md5(s):
@@ -149,11 +148,11 @@ def md5(s):
     return hash.hexdigest()
 ```
 
-由于我的博客中博文的相对路径在50个字符以内，所以并未采用MD5编码。
+由于我的博客中博文的相对路径在 50 个字符以内，所以并未采用 MD5 编码。
 
-### 防止重复创建Issue
+### 防止重复创建 Issue
 
-由于程序每次运行都要遍历一遍`sitemap.xml`，而一遍来说我们的博客中只有新写的博文没有创建Issue，如果不对「已初始化」和「未初始化」的链接加以区分，就会重复创建Issue。
+由于程序每次运行都要遍历一遍`sitemap.xml`，而一遍来说我们的博客中只有新写的博文没有创建 Issue，如果不对「已初始化」和「未初始化」的链接加以区分，就会重复创建 Issue。
 
 所以，我们需要有一个数据库来储存哪些链接是已初始化过的，遍历`sitemap.xml`时，将其中的网址和数据库内容对比，对不在数据库中的网址进行初始化并写入数据库。
 
@@ -202,7 +201,7 @@ for url in urls:
     repo.create_issue(title = title ,body = url,labels = labels)
     writeExistUrl.write('\n'+url)
     print(url + ' created')
-    
+
 readExistUrl.close()
 writeExistUrl.close()
 ```
