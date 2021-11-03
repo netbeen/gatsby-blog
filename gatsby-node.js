@@ -155,7 +155,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       projectUrl: String
       siteUrl: String
       social: Social
-      icp: String
       nav: [String]
     }
 

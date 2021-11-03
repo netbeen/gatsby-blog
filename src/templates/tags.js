@@ -15,7 +15,6 @@ const TagsTemplate = (raw) => {
   return (
     <Layout
       location={location}
-      icp={data.site.siteMetadata.icp}
       projectUrl={data.site.siteMetadata.projectUrl}
     >
       <Seo title={`Tag: ${tag}`} />
@@ -44,7 +43,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        icp
         projectUrl
       }
     }

@@ -29,7 +29,7 @@ const IconDark = () => (
   />
 );
 
-const Layout = ({ location, children, icp, projectUrl, className = '' }) => {
+const Layout = ({ location, children, projectUrl, className = '' }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath = location.pathname === rootPath;
   const darkModeEnabled = useDarkMode();
@@ -63,18 +63,18 @@ const Layout = ({ location, children, icp, projectUrl, className = '' }) => {
             <Link to="/" className="purea">
               Blog
             </Link>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href={projectUrl}
-              className="purea"
-              alt="project"
-            >
-              Project
-            </a>
-            <Link to="/about" className="purea">
-              About
-            </Link>
+            {/*<a*/}
+            {/*  target="_blank"*/}
+            {/*  rel="noreferrer"*/}
+            {/*  href={projectUrl}*/}
+            {/*  className="purea"*/}
+            {/*  alt="project"*/}
+            {/*>*/}
+            {/*  Project*/}
+            {/*</a>*/}
+            {/*<Link to="/about" className="purea">*/}
+            {/*  About*/}
+            {/*</Link>*/}
           </div>
         </header>
         <main className="blog-main">{children}</main>
@@ -104,19 +104,7 @@ const Layout = ({ location, children, icp, projectUrl, className = '' }) => {
             </aside>
           </div>
           <div className="copyright">
-            © 2021 — Designed & developed by rhinoc
-          </div>
-          <div className="icp">
-            互联网ICP备案：
-            <a
-              className="purea"
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.miitbeian.gov.cn/"
-              nofollow=""
-            >
-              {icp}
-            </a>
+            © {new Date().getFullYear()} — Designed & developed by netbeen
           </div>
         </footer>
         <Search

@@ -2,16 +2,16 @@ require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
-    title: `OuttaScope`,
+    title: `Burny Potato`,
     author: {
-      name: `rhinoc`,
-      mail: `rhinoc@outlook.com`,
-      summary: `Supposed to be a dev blog, but don't be suprised if you see something else.`,
+      name: `netbeen`,
+      mail: `netbeen.cn@gmail.com`,
+      summary: `Record each recordable thing in my life.`,
     },
-    description: `I think, therefore I am.`,
-    projectUrl: `https://github.com/rhinoc`,
-    icp: `粤ICP备18112604号-1`,
-    nav: ['frontend', 'cs', 'embeded', 'etc'],
+    description: `Burny Potato`,
+    projectUrl: `https://github.com/netbeen/gatsby-blog`,
+    // nav: ['frontend', 'cs', 'embeded', 'etc'],
+    nav: [],
   },
   plugins: [
     {

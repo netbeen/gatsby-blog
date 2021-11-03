@@ -67,7 +67,7 @@ Redux 则给出了另一种解决方法，使用单一数据源 Store 来存储�
 
 ```js
 // src/index.js
-import { createStore } from 'redux';
+import {createStore} from 'content/post_backup/redux';
 import rootReducer from './reducers/index';
 
 const store = createStore(rootReducer);

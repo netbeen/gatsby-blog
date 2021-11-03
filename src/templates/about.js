@@ -11,7 +11,6 @@ const AboutPage = (raw) => {
   return (
     <Layout
       location={location}
-      icp={data.site.siteMetadata.icp}
       projectUrl={data.site.siteMetadata.projectUrl}
     >
       <Seo title="About" />
@@ -81,7 +80,6 @@ export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
-        icp
         projectUrl
         author {
           name
