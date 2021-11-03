@@ -111,22 +111,24 @@ const BlogPostTemplate = ({ data, location }) => {
           className="post__body glass"
         />
         <footer className="post__footer">
-          {previous && (
-            <Link
-              to={previous.fields.slug}
-              rel="prev"
-              className="prev glass purea"
-            >
-              <div className="desc">← Previous</div>
-              <div className="post-title">{previous.frontmatter.title}</div>
-            </Link>
-          )}
-          {next && (
-            <Link to={next.fields.slug} rel="next" className="next glass purea">
-              <div className="desc">Next →</div>
-              <div className="post-title">{next.frontmatter.title}</div>
-            </Link>
-          )}
+          <Link
+            to={previous?.fields?.slug ?? ''}
+            rel="prev"
+            className="prev glass purea"
+            style={{visibility: previous ? 'visible' : 'hidden'}}
+          >
+            <div className="desc">← Previous</div>
+            <div className="post-title">{previous?.frontmatter?.title ?? ''}</div>
+          </Link>
+          <Link
+            to={next?.fields?.slug ?? ''}
+            rel="next"
+            className="next glass purea"
+            style={{visibility: next ? 'visible' : 'hidden'}}
+          >
+            <div className="desc">Next →</div>
+            <div className="post-title">{next?.frontmatter?.title ?? ''}</div>
+          </Link>
         </footer>
       </div>
       <div
@@ -167,7 +169,7 @@ export default BlogPostTemplate;
 export const pageQuery = graphql`
   query BlogPostBySlug(
     $id: String!
-    $previousPostId: String
+    $prev: String
     $nextPostId: String
   ) {
     site {
@@ -189,7 +191,7 @@ export const pageQuery = graphql`
         tags
       }
     }
-    previous: markdownRemark(id: { eq: $previousPostId }) {
+    previous: markdownRemark(id: { eq: $prev }) {
       fields {
         slug
       }
