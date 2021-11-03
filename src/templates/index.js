@@ -62,7 +62,7 @@ const IndexTemplate = (raw) => {
 export default IndexTemplate;
 
 export const pageQuery = graphql`
-  query($limit: Int!, $skip: Int!, $cate: String = "//") {
+  query ($limit: Int!, $skip: Int!, $cate: String = "//") {
     site {
       siteMetadata {
         title

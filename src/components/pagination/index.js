@@ -27,12 +27,8 @@ let genPageList = (cur, last) => {
 };
 
 const Pagination = ({ pageContext, location }) => {
-  const {
-    previousPagePath,
-    nextPagePath,
-    humanPageNumber,
-    numberOfPages,
-  } = pageContext;
+  const { previousPagePath, nextPagePath, humanPageNumber, numberOfPages } =
+    pageContext;
   let baseUrl = location.pathname.replace(/\/page\/.*/, '');
   baseUrl = baseUrl[baseUrl.length - 1] === '/' ? baseUrl : `${baseUrl}/`;
   const PATH_ROOT = '';
