@@ -37,7 +37,7 @@ const handleToggle = function (toggle) {
 };
 
 const BlogPostTemplate = ({ data, location }) => {
-  const [showToc, setShowToc] = useState(false);
+  const [showToc, setShowToc] = useState(true);
   const [stickyToc, setStickyToc] = useState(false);
   const [showBackTop, setShowBackTop] = useState(false);
 
