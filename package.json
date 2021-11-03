@@ -32,7 +32,7 @@
     "gatsby-remark-custom-blocks": "^3.2.0",
     "gatsby-remark-images": "^6.0.0",
     "gatsby-remark-katex": "^4.1.0",
-    "gatsby-remark-prismjs": "^4.1.0",
+    "gatsby-remark-prismjs": "^6.0.0",
     "gatsby-remark-responsive-iframe": "^3.2.0",
     "gatsby-remark-smartypants": "^3.1.0",
     "gatsby-source-filesystem": "^4.1.0",
