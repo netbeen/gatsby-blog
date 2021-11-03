@@ -27,9 +27,9 @@
     "gatsby-plugin-sharp": "^4.0.0",
     "gatsby-plugin-styled-components": "^5.0.0",
     "gatsby-remark-autolink-headers": "^3.2.0",
+    "gatsby-remark-code-buttons": "^2.0.7",
     "gatsby-remark-code-titles": "^1.1.0",
     "gatsby-remark-copy-linked-files": "^3.1.0",
-    "gatsby-remark-code-buttons": "^2.0.7",
     "gatsby-remark-custom-blocks": "^3.2.0",
     "gatsby-remark-images": "^4.1.1",
     "gatsby-remark-katex": "^4.1.0",
@@ -50,9 +50,7 @@
     "sass": "^1.32.8",
     "styled-components": "^5.2.1",
     "styled-icons": "^10.31.0",
-    "tocbot": "^4.12.2",
-    "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75"
+    "tocbot": "^4.13.6-1"
   },
   "devDependencies": {
     "prettier": "^2.4.1"
