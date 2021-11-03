@@ -39,6 +39,8 @@ SSR `Server Side Rendering` : 首屏由 Server 渲染的，script 加载完成�
 - 实现复杂
 - Server 性能瓶颈：由于 Server 在处理业务逻辑的同时，还需要处理页面渲染，业务高峰时容易形成性能瓶颈
 
+PS: `SSR` 对于数据变化缓慢甚至不变化的站点，比如文档类站点，存在很大的性能浪费，因为服务端渲染出来页面，很有可能是相同的，所以引申出 `SSG` 的概念
+
 SSG: 所有页面在 CI `Continuous integration` 阶段已经渲染完成，存储在 CDN `Content Delivery Network` 上，Server 通过路由规则反向代理，返回 URL 对应的页面
 
 优点：
@@ -66,7 +68,14 @@ $ npm run build # 生成静态页面
 
 ## 将 Gatsby 站点部署到 Server 上
 
-将静态页面部署到 Server 上，传统做法是购买一台云服务器，安装 `nginx` ，设置好反向代理配置。如果要做的更好，还绑定域名，再需要申请 `SSL证书` 以支持 `https` 方式访问。不过现在有更好的选择：可以使用支持`静态页面托管`的云平台（目前用户量较大的是 [Gatsby Cloud](https://www.gatsbyjs.com/products/cloud/) 和 [Vercel](https://vercel.com/) ），更方便，更实惠，性能更好。与 `Vercel` 相比，目前 `Gatsby Cloud` ，功能和扩展性较弱，所以我选择以 `Vercel` 作为托管平台
+将静态页面部署到 Server 上，传统步骤如下
+
+- 购买一台云服务器
+- 安装 `nginx` ，设置好反向代理配置
+- 将静态站点部署到服务器上
+- （如果要做的更好）还要绑定域名，再需要申请 `SSL证书` ，以支持 `https` 方式访问
+
+不过现在有更好的选择：可以使用支持`静态页面托管`的云平台（目前用户量较大的是 [Gatsby Cloud](https://www.gatsbyjs.com/products/cloud/) 和 [Vercel](https://vercel.com/) ），更方便，更实惠，性能更好。与 `Vercel` 相比，目前 `Gatsby Cloud` ，功能和扩展性较弱，所以我选择以 `Vercel` 作为托管平台
 
 | 特性                                   | Gatsby Cloud  | Vercel   | 
 | ------------------------------------------- | --------- | ---------- |
