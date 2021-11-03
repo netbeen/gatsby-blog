@@ -13,7 +13,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "algoliasearch": "^4.8.6",
     "applause-button": "^3.4.0",
-    "gatsby": "^3.14.3",
+    "gatsby": "^3.14.5",
     "gatsby-awesome-pagination": "^0.3.6",
     "gatsby-cli": "^3.14.2",
     "gatsby-plugin-algolia": "^0.22.2",
