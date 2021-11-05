@@ -30,13 +30,24 @@ DoT `DNS-over-TLS` ，不同于原始 DNS 使用裸 `UDP` 作为底层协议，D
 DoH `DNS-over-HTTPS` ， DoH 就借力更加彻底了，直接使用 HTTPS 作为底层协议，这样借助于 `TCP` + `TLS`
 + `HTTPS` 三重 Buff 加成，也是天然就保证了 `Integrity` 和 `Confidentiality` 。相比 DoT ，DoH 因为多封装了一层流行协议 HTTP ，所以性能更差，但实现难度更低
 
-### Chrome 启用 DoH
-
-Setting -> Security and Privacy -> Security -> 开启 Use secure DNS 并选择 Google Public DNS 
-
 ### Firefox 启用 DoH
 
 设置 -> 常规 -> 网络设置 -> 设置... -> 勾选 启用HTTPS的DNS 并选择 Cloudflare
+
+### 如何验证 DoH 是否生效
+
+访问 [https://1.1.1.1/help](https://1.1.1.1/help) ，会看到如下输出，其中第二行内容即 DoH 是否生效的检测结果
+
+```text
+Debug Information
+Connected to 1.1.1.1        Yes
+Using DNS over HTTPS (DoH)	Yes
+Using DNS over TLS (DoT)    No
+Using DNS over WARP         No
+AS Name                     Cloudflare
+AS Number                   13335
+Cloudflare Data Center      LAX
+```
 
 ## 总结
 
