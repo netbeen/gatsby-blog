@@ -12,6 +12,7 @@ module.exports = {
     projectUrl: `https://github.com/netbeen/gatsby-blog`,
     // nav: ['frontend', 'cs', 'embeded', 'etc'],
     nav: [],
+    siteUrl: `https://blog.netbeen.top`,
   },
   plugins: [
     {
@@ -154,5 +155,6 @@ module.exports = {
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-sitemap`,
   ],
 };
