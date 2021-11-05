@@ -1,7 +1,7 @@
 ---
 title: HTTP 协议演进历史
 date: '2020-02-15'
-tags: ['http', 'http2', 'protocol', 'history']
+tags: ['http', 'http2', 'network', 'history']
 category: etc
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Gatsby 初体验
 date: '2021-11-03'
-tags: ['gatsby']
+tags: ['gatsby', 'vercel', 'ssg']
 category: etc
 ---
 
