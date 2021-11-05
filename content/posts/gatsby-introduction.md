@@ -96,7 +96,7 @@ $ npm run build # 生成静态页面
 - 登录 [https://vercel.com/](https://vercel.com/)
 - New Project
 - Import Git Repository
-- 选择 Gatsby 站点工，程等待 CI 结束
+- 选择 Gatsby 站点工程，等待 CI 结束
 - 此时站点已经可以用过 Vercel 的三级域名 *.vercel.app 访问
 - 设置新站点 dns 解析，添加 cname 记录指向 Vercel 源，等待自动化申请 SSL 证书
 - DONE

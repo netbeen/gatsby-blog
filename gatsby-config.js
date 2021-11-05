@@ -52,10 +52,10 @@ module.exports = {
                 `width: ${fluidResult.presentationWidth}px;`,
             },
           },
-          // { // remark plugin: image figure caption for online image
-          //   resolve: `gatsby-remark-figure-caption`,
-          //   options: {figureClassName: 'online-image-figure'},
-          // },
+          { // remark plugin: image figure caption for online image
+            resolve: `gatsby-remark-figure-caption`,
+            options: {figureClassName: 'online-image-figure'},
+          },
           {
             // remark plugin: math equation support
             resolve: `gatsby-remark-katex`,
