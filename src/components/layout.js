@@ -84,6 +84,7 @@ const Layout = ({ location, children, projectUrl, className = '' }) => {
             <a
               className="purea icon-wrapper"
               href="https://creativecommons.org/licenses/by/4.0/"
+              aria-label="creative-commons"
             >
               <CreativeCommons />
               <CreativeCommonsBy />

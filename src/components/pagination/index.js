@@ -42,6 +42,7 @@ const Pagination = ({ pageContext, location }) => {
       className={`purea pagination__icon ${
         !previousPagePath && 'pagination__icon--disabled'
       }`}
+      aria-label="previous-page"
     >
       <div className="item-wrapper item-wrapper--chevron">
         <LeftIcon className="icon" />
@@ -55,6 +56,7 @@ const Pagination = ({ pageContext, location }) => {
       className={`purea pagination__icon ${
         !nextPagePath && 'pagination__icon--disabled'
       }`}
+      aria-label="next-page"
     >
       <div className="item-wrapper item-wrapper--chevron">
         <RightIcon className="icon" />
