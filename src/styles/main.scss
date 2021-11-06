@@ -22,7 +22,7 @@
     --opacity: .4;
     /* Background */
     --bg-dark: url("../images/wrapped.svg"),
-        url("../images/gradient.png");
+        url("../images/gradient.jpg");
     --bg-light: url("../images/wrapped.svg"),
     url("../images/gradient-light.png");
     /* Shadow */
@@ -352,7 +352,7 @@ h6 {
                 font-weight: 500;
                 letter-spacing: 1px;
                 text-transform: uppercase;
-    
+
                 &:hover{
                     opacity: 1;
                 }
