@@ -23,12 +23,12 @@ DNSSEC `DNS Security Extensions` ，DNSSEC 是目前最大规模部署的 DNS �
 
 ## DNS-over-TLS
 
-DoT `DNS-over-TLS` ，不同于原始 DNS 使用裸 `UDP` 作为底层协议，DoT 使用了 `TCP` + `TLS` ，借助于 `TLS` 的能力，天然就保证了 `Integrity` 和 `Confidentiality`
+DoT `DNS-over-TLS` ，不同于原始 DNS 使用裸 `UDP` 作为底层协议，DoT 使用了 `TCP` + `TLS` ，借助于 `TLS` 的能力，天然就保证了 `Integrity` 和 `Confidentiality` ，但是 DoT 使用的传送层端口是特殊的 `853` ，也就意味着，虽然攻击者知道 `DNS Query` 的具体内容，也无法篡改数据，但是至少它也得到了一个关键信息，即该 Client 正在使用 DoT，也会造成一定程度的信息泄露
 
 ## DNS-over-HTTPS
 
 DoH `DNS-over-HTTPS` ， DoH 就借力更加彻底了，直接使用 HTTPS 作为底层协议，这样借助于 `TCP` + `TLS`
-+ `HTTPS` 三重 Buff 加成，也是天然就保证了 `Integrity` 和 `Confidentiality` 。相比 DoT ，DoH 因为多封装了一层流行协议 HTTP ，所以性能更差，但实现难度更低
++ `HTTPS` 三重 Buff 加成，也是天然就保证了 `Integrity` 和 `Confidentiality` 。相比 DoT ，DoH 因为多封装了一层流行协议 HTTP ，所以性能更差，但实现难度更低。此外，由于 DoH 使用的是 HTTPS 作为承载协议，因此它的传输层端口号也是 `443` ，很难从大量的 HTTPS 请求中分离出 DoH 请求，也是这四个协议里安全防护力度最高的协议
 
 ### Firefox 启用 DoH
 
@@ -56,6 +56,7 @@ Cloudflare Data Center      LAX
 | 保护 Confidentiality    |     | Y   | Y | Y |
 | 保护 Integrity          | Y   | Y   | Y | Y |
 | 有 RFC 协议规范          | Y   |     | Y | Y |
+| 传输层端口号             | 53  |  443   | 853 | 443 |
 | 公共 DNS 支持（Cloudflare）   | Y   |     | Y | Y |
 | 公共 DNS 支持（Google）   | Y   |     | Y | Y |
 | 公共 DNS 支持（Open DNS）  | Y   |  Y   |  | Y |
