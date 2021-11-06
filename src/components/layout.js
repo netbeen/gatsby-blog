@@ -6,7 +6,7 @@ import { lightTheme, darkTheme } from '../themes/theme';
 import { GlobalStyles } from '../themes/GlobalStyles';
 import { StaticImage } from 'gatsby-plugin-image';
 import { CreativeCommons, CreativeCommonsBy } from '@styled-icons/remix-fill/';
-import useDarkMode from '../hooks/useDarkMode';
+// import useDarkMode from '../hooks/useDarkMode';
 import Search from '../components/search';
 import { Search2 as SearchIcon } from '@styled-icons/remix-fill/Search2';
 
@@ -32,7 +32,8 @@ const IconDark = () => (
 const Layout = ({ location, children, projectUrl, className = '' }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath = location.pathname === rootPath;
-  const darkModeEnabled = useDarkMode();
+  // const darkModeEnabled = useDarkMode();
+  const darkModeEnabled = true;
   const [showSearch, setShowSearch] = useState(false);
   let blogTitle = (
     <div className="blog-title">
