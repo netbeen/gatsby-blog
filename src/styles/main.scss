@@ -21,10 +21,8 @@
     /* Opacity */
     --opacity: .4;
     /* Background */
-    --bg-dark: url("../images/wrapped.svg"),
-        url("../images/gradient.jpg");
-    --bg-light: url("../images/wrapped.svg"),
-    url("../images/gradient-light.png");
+    --bg-dark: url("../images/wrapped.svg"), url("../images/gradient.jpg");
+    --bg-light: url("../images/wrapped.svg"), url("../images/gradient-light.png");
     /* Shadow */
     --shadow-glass: rgba(0, 0, 0, .06) 0px 5px 30px;
 }

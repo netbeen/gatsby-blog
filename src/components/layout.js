@@ -2,11 +2,10 @@ import * as React from 'react';
 import { useState } from 'react';
 import { Link } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme } from '../themes/theme';
+import { darkTheme } from '../themes/theme';
 import { GlobalStyles } from '../themes/GlobalStyles';
 import { StaticImage } from 'gatsby-plugin-image';
 import { CreativeCommons, CreativeCommonsBy } from '@styled-icons/remix-fill/';
-// import useDarkMode from '../hooks/useDarkMode';
 import Search from '../components/search';
 import { Search2 as SearchIcon } from '@styled-icons/remix-fill/Search2';
 
@@ -19,32 +18,30 @@ const IconLight = () => (
     alt="blog-icon"
   />
 );
-const IconDark = () => (
-  <StaticImage
-    className="blog-title__icon"
-    src="../images/icon-dark.svg"
-    quality={100}
-    placeholder="tracedSVG"
-    alt="blog-icon"
-  />
-);
+// const IconDark = () => (
+//   <StaticImage
+//     className="blog-title__icon"
+//     src="../images/icon-dark.svg"
+//     quality={100}
+//     placeholder="tracedSVG"
+//     alt="blog-icon"
+//   />
+// );
 
 const Layout = ({ location, children, projectUrl, className = '' }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath = location.pathname === rootPath;
-  // const darkModeEnabled = useDarkMode();
-  const darkModeEnabled = true;
   const [showSearch, setShowSearch] = useState(false);
   let blogTitle = (
     <div className="blog-title">
       <Link to="/" className="purea">
-        {darkModeEnabled ? <IconLight /> : <IconDark />}
+        <IconLight />
       </Link>
     </div>
   );
 
   return (
-    <ThemeProvider theme={darkModeEnabled ? darkTheme : lightTheme}>
+    <ThemeProvider theme={darkTheme}>
       <GlobalStyles />
       <div
         className={`container ${

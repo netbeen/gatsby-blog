@@ -2,13 +2,13 @@ require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
-    title: `Burny Potato`,
+    title: `Potato Insight`,
     author: {
       name: `netbeen`,
       mail: `netbeen.cn@gmail.com`,
       summary: `Record each recordable thing in my life.`,
     },
-    description: `Burny Potato`,
+    description: `Potato Insight`,
     projectUrl: `https://github.com/netbeen/gatsby-blog`,
     // nav: ['frontend', 'cs', 'embeded', 'etc'],
     nav: [],
@@ -118,15 +118,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
+        name: `Potato Insight`,
         short_name: `GatsbyJS`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon-light.svg`, // This path is relative to the root of the site.
       },
     },
+    'gatsby-plugin-offline',
     {
       resolve: `gatsby-plugin-algolia`,
       options: {
