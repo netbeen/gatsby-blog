@@ -67,6 +67,10 @@ const Seo = ({ description, lang, meta, title }) => {
           name: `google-site-verification`,
           content: `nfOPr4G-D6vPaud2_lZtu7JpzA6FZ71Zy3XV-ekCL8w`,
         },
+        {
+          name: `baidu-site-verification`,
+          content: `code-vpT5LZJPkA`,
+        },
       ].concat(meta)}
     />
   );
