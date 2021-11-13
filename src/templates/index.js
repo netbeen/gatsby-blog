@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
@@ -9,25 +9,25 @@ import Pagination from '../components/pagination/';
 import '../styles/main.scss';
 
 const IndexTemplate = (raw) => {
-  const [stickyNav, setStickyNav] = useState(false);
+  // const [stickyNav, setStickyNav] = useState(false);
   const { data, pageContext, location } = raw;
   const posts = data.allMarkdownRemark.nodes;
 
-  useEffect(() => {
-    const catNav = document.querySelector('.blog-name');
-    const observer = new IntersectionObserver(
-      (e) => setStickyNav(!e[0].isIntersecting),
-      {
-        root: null,
-        threshold: 0,
-      }
-    );
-    observer.observe(catNav);
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
+  // useEffect(() => {
+  //   const catNav = document.querySelector('.blog-name');
+  //   const observer = new IntersectionObserver(
+  //     (e) => setStickyNav(!e[0].isIntersecting),
+  //     {
+  //       root: null,
+  //       threshold: 0,
+  //     }
+  //   );
+  //   observer.observe(catNav);
+  //
+  //   return () => {
+  //     observer.disconnect();
+  //   };
+  // }, []);
 
   return (
     <Layout
@@ -39,7 +39,7 @@ const IndexTemplate = (raw) => {
       <CateNav
         cates={data.site.siteMetadata.nav}
         curCate={pageContext.cate}
-        className={stickyNav ? 'accerator category-list--sticky' : ''}
+        // className={stickyNav ? 'accerator category-list--sticky' : ''}
       />
       <section className="post-list">
         {posts.map((post) => (
