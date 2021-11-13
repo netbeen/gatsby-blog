@@ -6,25 +6,26 @@ import Layout from '../components/layout';
 import Seo from '../components/seo';
 import TagList from '../components/tagList/';
 import { ChevronUp as BackTopIcon } from '@styled-icons/boxicons-solid';
-// import { StaticImage } from 'gatsby-plugin-image';
+import { StaticImage } from 'gatsby-plugin-image';
 import '../styles/post.scss';
 import '../styles/tocbot.scss';
 import '../styles/prism.scss';
 import 'katex/dist/katex.min.css';
 
-// const Avatar = () => (
-//   <Link className="purea avatar-wrapper" to="/about">
-//     <StaticImage
-//       className="avatar"
-//       src="../images/memoji.png"
-//       alt="avatar"
-//       quality={100}
-//       placeholder="blurred"
-//     />
-//   </Link>
-// );
+const Avatar = () => (
+  // <Link className="purea avatar-wrapper" to="/about">
+  <div className="purea avatar-wrapper" to="/about">
+    <StaticImage
+      className="avatar"
+      src="../images/authorAvatar.jpeg"
+      alt="avatar"
+      quality={100}
+      // placeholder="blurred"
+    />
+  </div>
+);
 
-const Avatar = () => null;
+// const Avatar = () => null;
 
 const handleToggle = function (toggle) {
   return () => {
