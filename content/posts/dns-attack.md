@@ -32,7 +32,7 @@ PS：如果实施 `DNS Poisoning` 的是一台 `DNS Server` ，那就更简单�
 
 ## DNS Hijacking
 
-与 `DNS Poisoning` 有些类似，甚至笔者认为两者的边界有一些模糊，`DNS Hijacking` 的目标也是希望返回一个伪造的 IP 地址给 `DNS Client` ，只是实施 `DNS Hijacking` 的只能是 `DNS Server` 甚至是 `Authoritative Nameserver` 实施层级越高的 `DNS Hijacking` 影响范围越大。
+与 `DNS Poisoning` 有些类似，甚至我认为两者的边界有一些模糊，`DNS Hijacking` 的目标也是希望返回一个伪造的 IP 地址给 `DNS Client` ，只是实施 `DNS Hijacking` 的只能是 `DNS Server` 甚至是 `Authoritative Nameserver` 实施层级越高的 `DNS Hijacking` 影响范围越大。
 
 此类攻击的实现原理是：当该 `DNS Server` 收到 `DNS Query` 后，如果命中了特定的规则，则返回一个伪造的 IP 地址回去， 至此 `DNS Hijacking` 成功
 

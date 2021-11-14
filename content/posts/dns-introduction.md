@@ -15,7 +15,7 @@ DNS `Domain Name System` 是 Internet 里的黄页，最重要的职责是将 `d
 
 ## 域名层次
 
-以笔者的博客 URL `https://blog.netbeen.top/` 为例，表面上 `domain name` 是 `blog.netbeen.top` ，而实际的 `domain name` 是 `blog.netbeen.top.` ，最后的 `.` 表示 `root` ， 是整个 `domain name tree` 的根。 `domain name` 的级别如下：
+以我的博客 URL `https://blog.netbeen.top/` 为例，表面上 `domain name` 是 `blog.netbeen.top` ，而实际的 `domain name` 是 `blog.netbeen.top.` ，最后的 `.` 表示 `root` ， 是整个 `domain name tree` 的根。 `domain name` 的级别如下：
 
 ```text
 blog.netbeen.top.
@@ -155,7 +155,7 @@ netbeen.top.		3600	IN	NS	dns29.hichina.com.
 ;; MSG SIZE  rcvd: 96
 ```
 
-由于笔者的域名 `netbeen.top` 是在阿里云购买的，所以 `TLD Nameserver` 返回的结果并没有直接返回结果，而是又返回了一个 `NS` 记录，指向了阿里云维护的 `Authoritative Nameserver`
+由于我的域名 `netbeen.top` 是在阿里云购买的，所以 `TLD Nameserver` 返回的结果并没有直接返回结果，而是又返回了一个 `NS` 记录，指向了阿里云维护的 `Authoritative Nameserver`
 
 ### Authoritative Nameserver
 
@@ -186,7 +186,7 @@ blog.netbeen.top.	600	IN	CNAME	cname.vercel-dns.com.
 ;; MSG SIZE  rcvd: 79
 ```
 
-由于笔者的博客是托管在 `Vercel` 上，所以 `Authoritative Nameserver` 没有直接返回 `A` 记录，返回了一个 `CNAME` 记录，指向了 `cname.vercel-dns.com.`
+由于我的博客是托管在 `Vercel` 上，所以 `Authoritative Nameserver` 没有直接返回 `A` 记录，返回了一个 `CNAME` 记录，指向了 `cname.vercel-dns.com.`
 
 由于最终得到的是一个 `CNAME` 记录，无法直接访问，所以 `Recursive Resolver` 只能再次重新发起查询（从 `Root Nameserver` 开始再来一遍，过程我就不再赘述了），跳过中间的步骤，最终得到如下的查询结果：
 
@@ -213,7 +213,7 @@ cname.vercel-dns.com.	15	IN	A	76.223.126.88
 ;; MSG SIZE  rcvd: 65
 ```
 
-最终本次查询完成 `76.223.126.88` 即为笔者博客的对应 Server 的IP地址 
+最终本次查询完成 `76.223.126.88` 即为我博客的对应 Server 的IP地址 
 
 ## DNS 记录类型 
 
