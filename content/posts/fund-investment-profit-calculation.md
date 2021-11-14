@@ -110,7 +110,7 @@ const fundIdentifier = '160119'
 // 通过爬虫抓取基金历史数据，包括单位净值、分红、拆分
 const unitPrices = await fetchUnitPriceByIdentifier(fundIdentifier);
 const dividends = await fetchDividendByIdentifier(fundIdentifier);
-const splits = fetchSplitByIdentifier(fundIdentifier);
+const splits = await fetchSplitByIdentifier(fundIdentifier);
 
 // 录入自己的历史交易
 const operations = [{
