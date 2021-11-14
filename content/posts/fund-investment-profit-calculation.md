@@ -79,7 +79,11 @@ r = 总盈利 / ∑(每日市值)
 - 基金的分红拆分逻辑会进一步增加第一个问题的复杂度
 - 基金数据爬取困难
 
-我开发了一个库，名为 fund-tools [https://www.npmjs.com/package/fund-tools](https://www.npmjs.com/package/fund-tools) 整合了 基金数据爬虫、分红&拆分自动化处理、收益率&年化收益率计算、手续费计算 等功能，可以运行在浏览器环境和 Node.js runtime 里，简单介绍一下使用方法，更详细的API介绍请查阅 README：
+我开发了一个库，名为 fund-tools 
+- NPM: [https://www.npmjs.com/package/fund-tools](https://www.npmjs.com/package/fund-tools) 
+- GitHub: [https://github.com/netbeen/fund-tools](https://github.com/netbeen/fund-tools) 
+
+整合了 基金数据爬虫、分红&拆分自动化处理、收益率&年化收益率计算、手续费计算 等功能，可以运行在浏览器环境和 Node.js runtime 里，简单介绍一下使用方法，更详细的API介绍请查阅 README：
 
 ### 安装
 
