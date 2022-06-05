@@ -1,6 +1,6 @@
 ---
 title: Kubernetes 历史/集群架构
-date: '2022-06-05'
+date: '2022-06-04'
 tags: ['kubernetes']
 category: etc
 ---
